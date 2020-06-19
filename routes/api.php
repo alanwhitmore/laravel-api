@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\ProjectController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +16,6 @@ use App\Http\Controllers\Api\ProjectController;
 |
 */
 
-
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -27,8 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::post('clients', [ClientController::class, 'store'])->name('client');
 
 Route::group(['namespace' => 'Api'], function () {
-
-    Route::apiResource('clients','ClientController');
+    Route::apiResource('clients', 'ClientController');
 
     Route::get('projects', [ProjectController::class, 'index'])->name('projects');
 });

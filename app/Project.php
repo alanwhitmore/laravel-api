@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Client;
 
 class Project extends Model
 {
@@ -11,6 +10,6 @@ class Project extends Model
 
     public function Client()
     {
-        return $this->belongsTo(Client::class);        
+        return $this->belongsTo(Client::class);
     }
 }

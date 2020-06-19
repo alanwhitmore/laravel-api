@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Client;
+use Illuminate\Database\Seeder;
 
 class ClientSeeder extends Seeder
 {

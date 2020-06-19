@@ -2,26 +2,25 @@
 
 namespace App\Http\Resources;
 
-use App\Client;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\ClientResource;
 
 class ProjectResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'client_id' => $this->client_id,
-            'name' => $this->name,
+            'id'          => $this->id,
+            'client_id'   => $this->client_id,
+            'name'        => $this->name,
             'description' => $this->description,
-            'client' => new ClientResource($this->client)
-        ]; 
+            'client'      => new ClientResource($this->client),
+        ];
     }
 }
