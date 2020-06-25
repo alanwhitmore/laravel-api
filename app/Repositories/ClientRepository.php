@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Models\Client;
 use App\Exceptions\GeneralException;
+use App\Models\Client;
 
 /**
  * Class ClientRepository.
