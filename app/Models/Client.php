@@ -4,19 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- *
- */
 class Client extends Model
 {
-    /**
-     *
-     */
     protected $fillable = ['title'];
 
-
-     /**
-     * Client will have many projects
+    /**
+     * Client will have many projects.
      *
      * @return mixed
      */

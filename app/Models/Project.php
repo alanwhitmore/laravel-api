@@ -4,19 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 class Project extends Model
 {
     /**
-     * Fillable Database Fields
+     * Fillable Database Fields.
      *
      * @var array
      */
     protected $fillable = ['title', 'client_id', 'description'];
 
-
     /**
-     * Client Belongs to Projects
+     * Client Belongs to Projects.
      *
      * @return mixed
      */

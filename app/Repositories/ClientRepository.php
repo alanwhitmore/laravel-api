@@ -4,8 +4,6 @@ namespace App\Repositories;
 
 use App\Exceptions\GeneralException;
 use App\Models\Client;
-use App\Repositories\BaseRepository;
-use DB;
 
 /**
  * Class ClientRepository.
@@ -15,7 +13,7 @@ class ClientRepository extends BaseRepository
     /**
      * ClientRepository constructor.
      *
-     * @param  Client  $model
+     * @param Client $model
      */
     public function __construct(Client $model)
     {
@@ -27,6 +25,7 @@ class ClientRepository extends BaseRepository
      *
      * @throws GeneralException
      * @throws \Throwable
+     *
      * @return Role
      */
     public function create(array $input)
@@ -44,7 +43,6 @@ class ClientRepository extends BaseRepository
         }
 
         throw new GeneralException('There was a problem creating this client. Please try again.');
-
     }
 
     /**
@@ -53,6 +51,7 @@ class ClientRepository extends BaseRepository
      *
      * @throws GeneralException
      * @throws \Throwable
+     *
      * @return mixed
      */
     public function update(Client $client, array $input)
@@ -78,6 +77,7 @@ class ClientRepository extends BaseRepository
      *
      * @throws GeneralException
      * @throws \Throwable
+     *
      * @return mixed
      *
      * @todo don't delete client if there are projects associated.
@@ -86,7 +86,7 @@ class ClientRepository extends BaseRepository
     {
 
          //Don't delete the client if there are projects associated
-         if ($client->projects()->count() > 0) {
+        if ($client->projects()->count() > 0) {
             throw new GeneralException('You can not delete a client with associated projects.');
         }
 
@@ -95,7 +95,6 @@ class ClientRepository extends BaseRepository
         }
 
         throw new GeneralException('There was a problem deleting this client. Please try again.');
-
     }
 
     /**
@@ -109,6 +108,4 @@ class ClientRepository extends BaseRepository
             ->where('title', strtolower($name))
             ->count() > 0;
     }
-
-
 }
