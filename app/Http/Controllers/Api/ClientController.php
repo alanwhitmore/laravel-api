@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Client;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Resources\ClientResource;
+use App\Models\Client;
 use App\Repositories\ClientRepository;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class ClientController
+ * Class ClientController.
  */
 class ClientController extends APIController
 {
     /**
-     * Client Repository Object
+     * Client Repository Object.
      *
      * @var object
      */
@@ -32,12 +32,12 @@ class ClientController extends APIController
     }
 
     /**
-     * Return the Clients
+     * Return the Clients.
      *
      * @param Request $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
-    /** */
     public function index(Request $request)
     {
         $limit = $request->get('paginate') ? $request->get('paginate') : 25;
@@ -50,9 +50,10 @@ class ClientController extends APIController
     }
 
     /**
-     * Return the Specific Client
+     * Return the Specific Client.
      *
      * @param Client $client
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function show(Client $client)
@@ -61,24 +62,25 @@ class ClientController extends APIController
     }
 
     /**
-     * Create the Client
+     * Create the Client.
      *
      * @param StoreClientRequest $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(StoreClientRequest $request)
     {
-
         $client = $this->repository->create($request->all());
 
         return new ClientResource($client);
     }
 
     /**
-     * Update the Client
+     * Update the Client.
      *
-     * @param Client $client
+     * @param Client             $client
      * @param StoreClientRequest $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Client $client, StoreClientRequest $request)
@@ -89,9 +91,10 @@ class ClientController extends APIController
     }
 
     /**
-     * Delete the Client
+     * Delete the Client.
      *
      * @param Client $client
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(Client $client)
@@ -101,6 +104,5 @@ class ClientController extends APIController
         return $this->setStatusCode(Response::HTTP_NO_CONTENT)->respond([
             'message' => 'The Client was successfully deleted.',
         ]);
-
     }
 }

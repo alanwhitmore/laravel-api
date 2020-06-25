@@ -35,7 +35,7 @@ class EventServiceProvider extends ServiceProvider
     /**
      * It will auto discover events for us.
      *
-     * @return boolean
+     * @return bool
      */
     public function shouldDiscoverEvents()
     {

@@ -96,10 +96,11 @@ class Handler extends ExceptionHandler
                 }
             }
         }
+
         return parent::render($request, $exception);
     }
 
-     /**
+    /**
      * get the status code.
      *
      * @return statuscode
@@ -133,11 +134,11 @@ class Handler extends ExceptionHandler
     protected function respondWithError($message)
     {
         return $this->respond([
-                'error' => [
-                    'message'     => $message,
-                    'status_code' => $this->getStatusCode(),
-                ],
-            ]);
+            'error' => [
+                'message'     => $message,
+                'status_code' => $this->getStatusCode(),
+            ],
+        ]);
     }
 
     /**
