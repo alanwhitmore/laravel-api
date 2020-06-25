@@ -67,7 +67,7 @@ class ClientController extends APIController
     }
 
     /**
-     * GET Client
+     * GET Client.
      *
      * Return the Specific Client.
      *
@@ -90,7 +90,7 @@ class ClientController extends APIController
     }
 
     /**
-     * POST Client
+     * POST Client.
      *
      * Create the Client.
      *
@@ -111,7 +111,7 @@ class ClientController extends APIController
     }
 
     /**
-     * Update Client
+     * Update Client.
      *
      * Update the Client.
      *
@@ -133,7 +133,7 @@ class ClientController extends APIController
     }
 
     /**
-     * Delete Client
+     * Delete Client.
      *
      * Delete the Client.
      *
