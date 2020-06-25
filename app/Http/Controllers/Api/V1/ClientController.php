@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Resources\ClientResource;

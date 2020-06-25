@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +22,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('clients', 'ClientController');
 
 Route::get('projects', [ProjectController::class, 'index'])->name('projects');
-
-
