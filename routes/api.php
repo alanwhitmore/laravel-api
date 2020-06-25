@@ -20,12 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('clients', [ClientController::class, 'index'])->name('clients');
-// Route::get('clients/{client}', [ClientController::class, 'show'])->name('client');
-// Route::post('clients', [ClientController::class, 'store'])->name('client');
+Route::apiResource('clients', 'ClientController');
 
-Route::group(['namespace' => 'Api'], function () {
-    Route::apiResource('clients', 'ClientController');
+Route::get('projects', [ProjectController::class, 'index'])->name('projects');
 
-    Route::get('projects', [ProjectController::class, 'index'])->name('projects');
-});
+
