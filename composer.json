@@ -24,6 +24,7 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "codedungeon/phpunit-result-printer": "^0.26.1",
         "friendsofphp/php-cs-fixer": "^2.14",
+        "knuckleswtf/scribe": "^1.1",
         "roave/security-advisories": "dev-master"
     },
     "config": {
