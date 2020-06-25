@@ -3,6 +3,12 @@
          xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer">
 >
     <testsuites>
         <testsuite name="Unit">

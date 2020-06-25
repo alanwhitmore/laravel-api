@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Exceptions\GeneralException;
 use App\Models\Client;
+use App\Exceptions\GeneralException;
 
 /**
  * Class ClientRepository.
@@ -84,8 +84,7 @@ class ClientRepository extends BaseRepository
      */
     public function delete(client $client)
     {
-
-         //Don't delete the client if there are projects associated
+        //Don't delete the client if there are projects associated
         if ($client->projects()->count() > 0) {
             throw new GeneralException('You can not delete a client with associated projects.');
         }
